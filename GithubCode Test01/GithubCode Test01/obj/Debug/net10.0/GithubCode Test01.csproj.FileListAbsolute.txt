@@ -12,3 +12,4 @@ C:\Users\HIEN_UEH\source\repos\Project01\GithubCode Test01\GithubCode Test01\obj
 C:\Users\HIEN_UEH\source\repos\Project01\GithubCode Test01\GithubCode Test01\obj\Debug\net10.0\GithubCode Test01.pdb
 C:\Users\HIEN_UEH\source\repos\Project01\GithubCode Test01\GithubCode Test01\obj\Debug\net10.0\GithubCode Test01.genruntimeconfig.cache
 C:\Users\HIEN_UEH\source\repos\Project01\GithubCode Test01\GithubCode Test01\obj\Debug\net10.0\ref\GithubCode Test01.dll
+C:\Users\HIEN_UEH\source\repos\Project01\GithubCode Test01\GithubCode Test01\obj\Debug\net10.0\GithubCode Test01.sourcelink.json
