@@ -6,6 +6,7 @@
         {
             Console.WriteLine("Hello, my name is Hien, this is the first project in GITHUB");
             Console.WriteLine("Xin chào đây là dòng lệnh số 2");
+            Console.WriteLine("Đây là dòng code số 3");
         }
     }
 }
