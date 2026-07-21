@@ -4,6 +4,21 @@ namespace GithubCode_Test01
 {
     internal class Program
     {
+        //Viết hàm tạo ma trận m, n với các phần tử là số nguyên sinh ngẫu nhiên
+        static int[,] CreateRandomMatrix(int m, int n, int minValue, int maxValue)
+        {
+            Random rand = new Random();
+            int[,] matrix = new int[m, n];
+            for (int i = 0; i < m; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    matrix[i, j] = rand.Next(minValue, maxValue + 1);
+                }
+            }
+            return matrix;
+        }
+
         static void Main(string[] args)
         {
             Console.WriteLine("Giải phương trình bậc 2 dạng: a x^2 + b x = 0");

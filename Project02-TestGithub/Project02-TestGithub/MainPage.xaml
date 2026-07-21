@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project02_TestGithub.MainPage"
+             BackgroundColor="White">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="PowerToolbarItem" Text="⏻" Order="Primary" Priority="0" Clicked="OnToggleAppClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView x:Name="MainScroll">
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="12">
+
+            <Label Text="Quản lý thẻ tác vụ"
+                   FontSize="22"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+
+            <Entry x:Name="CardTitleEntry" Placeholder="Tên thẻ (ví dụ: Công việc hôm nay)" />
+            <Button Text="Tạo thẻ mới" Clicked="OnCreateCardClicked" />
+
+            <HorizontalStackLayout Spacing="8" VerticalOptions="Center">
+                <Label Text="Lọc:" VerticalOptions="Center" />
+                <Picker x:Name="FilterPicker" Title="Tất cả" SelectedIndexChanged="OnFilterChanged">
+                    <Picker.Items>
+                        <x:String>Tất cả</x:String>
+                        <x:String>Chưa xong</x:String>
+                        <x:String>Đã xong</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Button x:Name="SortButton" Text="Hoàn thành xuống" Clicked="OnToggleSortClicked" />
+            </HorizontalStackLayout>
+
+            <StackLayout x:Name="CardContainer" IsVisible="False">
+                <Frame CornerRadius="10" Padding="12" BackgroundColor="#FFF9E6" HasShadow="True">
+                    <VerticalStackLayout Spacing="8">
+                        <Label x:Name="CardTitleLabel" FontAttributes="Bold" FontSize="18" />
+
+                        <HorizontalStackLayout Spacing="8">
+                            <Entry x:Name="NewTaskEntry" Placeholder="Thêm tác vụ..." HorizontalOptions="FillAndExpand" />
+                            <Button Text="Thêm" Clicked="OnAddTaskClicked" />
+                        </HorizontalStackLayout>
+
+                        <CollectionView x:Name="TasksCollectionView" SelectionMode="None">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <SwipeView>
+                                        <SwipeView.RightItems>
+                                            <SwipeItems Mode="Execute">
+                                                <SwipeItem Text="Xóa" BackgroundColor="#FF4444" Invoked="OnDeleteSwipeInvoked" />
+                                            </SwipeItems>
+                                        </SwipeView.RightItems>
+                                        <Grid Padding="6">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+                                            <CheckBox Grid.Column="0" IsChecked="{Binding IsDone, Mode=TwoWay}" VerticalOptions="Center" />
+                                            <Label Grid.Column="1" Text="{Binding Title}" VerticalOptions="Center">
+                                                <Label.Style>
+                                                    <Style TargetType="Label">
+                                                        <Setter Property="TextColor" Value="Black" />
+                                                        <Style.Triggers>
+                                                            <DataTrigger TargetType="Label" Binding="{Binding IsDone}" Value="True">
+                                                                <Setter Property="TextColor" Value="Gray" />
+                                                                <Setter Property="TextDecorations" Value="Strikethrough" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Label.Style>
+                                            </Label>
+                                            <Button Grid.Column="2" Text="X" Clicked="OnDeleteButtonClicked" BackgroundColor="Transparent" TextColor="#FF4444" />
+                                        </Grid>
+                                    </SwipeView>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+                </Frame>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

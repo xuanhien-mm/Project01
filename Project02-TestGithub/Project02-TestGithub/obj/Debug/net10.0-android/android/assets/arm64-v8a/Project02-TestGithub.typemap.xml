@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="Project02-TestGithub" mvid="ada143a0d3294d09a4672f5aa85132e1">
+  <java-to-managed>
+    <entry java-name="crc64a6fde6d02cc0061a/MainActivity" managed-name="Project02_TestGithub.MainActivity, Project02-TestGithub" managed-type-token-id="33554441" />
+    <entry java-name="crc64a6fde6d02cc0061a/MainApplication" managed-name="Project02_TestGithub.MainApplication, Project02-TestGithub" managed-type-token-id="33554442" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64a6fde6d02cc0061a/MainActivity" managed-name="Project02_TestGithub.MainActivity, Project02-TestGithub" managed-type-token-id="33554441" />
+    <entry java-name="crc64a6fde6d02cc0061a/MainApplication" managed-name="Project02_TestGithub.MainApplication, Project02-TestGithub" managed-type-token-id="33554442" />
+  </managed-to-java>
+</api>
